@@ -1,5 +1,7 @@
 <?php
 
+namespace System\Controller;
+
 defined('__PROJECT_DIR__') or define('__PROJECT_DIR__', $_SERVER['DOCUMENT_ROOT']);
 require_once(__PROJECT_DIR__."/resources/config.php");
 

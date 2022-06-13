@@ -14,7 +14,7 @@
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
                         <i class="bi bi-house-heart-fill"></i>
-                        <span id="ProdutoNome">{$Produtos.Nome}</span>
+                        <span id="ProdutoNome">@{ProdutoNome}</span>
                     </a>
                     <div class="d-flex">
                         <button type="button" class="btn btn-light"><i class="bi bi-box-seam"></i></button>
@@ -26,19 +26,23 @@
             <div class="row p-2">
                 <div class="mb-3">
                     <label for="ProdutoID" class="form-label">ID</label>
-                    <input type="number" readonly class="form-control-plaintext text-muted" id="ProdutoID" placeholder="1">
+                    <input type="number" readonly class="form-control-plaintext text-muted" id="ProdutoID"
+                           value="@{ProdutoID}">
                 </div>
                 <div class="mb-3">
                     <label for="ProdutoValidade" class="form-label">Validade</label>
-                    <input type="date" readonly class="form-control-plaintext text-muted" id="ProdutoValidade">
+                    <input type="date" readonly class="form-control-plaintext text-muted" id="ProdutoValidade"
+                           value="@{ProdutoValidade}">
                 </div>
                 <div class="mb-3">
                     <label for="ProdutoReposicaoData" class="form-label">Data de Reposição</label>
-                    <input type="date" readonly class="form-control-plaintext text-muted" id="ProdutoReposicaoData">
+                    <input type="date" readonly class="form-control-plaintext text-muted" id="ProdutoReposicaoData"
+                           value="@{ProdutoReposicaoData}">
                 </div>
                 <div class="mb-3">
                     <label for="ProdutoUltimoRepositor" class="form-label">Ultimo Repositor</label>
-                    <input type="date" readonly class="form-control-plaintext text-muted" id="ProdutoUltimoRepositor">
+                    <input type="text" readonly class="form-control-plaintext text-muted" id="ProdutoUltimoRepositor"
+                           value="@{ProdutoUltimoRepositor}">
                 </div>
             </div>
         </div>

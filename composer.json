@@ -1,0 +1,6 @@
+{
+  "autoload": {
+    "classmap": ["System"]
+  },
+  "minimum-stability": "stable"
+}

@@ -2,11 +2,9 @@
 
 namespace System\Materials\Display;
 
-defined('__PROJECT_DIR__') or define('__PROJECT_DIR__', $_SERVER['DOCUMENT_ROOT']);
+//require_once $_SERVER['DOCUMENT_ROOT']."/vendor/autoload.php";
 
-require_once(__PROJECT_DIR__."/System/Core/DefaultController.php");
 use System\Core\DefaultController;
-
 
 class MainController extends DefaultController{
 
@@ -19,7 +17,7 @@ class MainController extends DefaultController{
     }
 
     private function OnPageLoad(){
-        $view = $this->parseView(__PROJECT_DIR__."/System/Materials/Display/View/Main.html",
+        $view = $this->parseView($_SERVER['DOCUMENT_ROOT']."/System/Materials/Display/View/Main.html",
             [
                 "ProdutoID"=>"100002",
                 "ProdutoNome"=>"Arroz",

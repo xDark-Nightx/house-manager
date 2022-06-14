@@ -6,7 +6,7 @@ defined('__PROJECT_DIR__') or define('__PROJECT_DIR__', $_SERVER['DOCUMENT_ROOT'
 require_once(__PROJECT_DIR__."/resources/config.php");
 
 class Database{
-    private PDO $mConnection;
+    private \PDO $mConnection;
 
     private function Connect() : bool{
         try {
@@ -16,17 +16,18 @@ class Database{
 
             $credentials = $config['db']['sql'];
 
-            $this->mConnection = new PDO("sqlsrv:server = {$credentials['host']} ; {$credentials['connectionInfo']}",
+            $this->mConnection = new \PDO("sqlsrv:server = {$credentials['host']} ; {$credentials['connectionInfo']}",
                 $credentials['username'], $credentials['password']);
 
             return true;
-        } catch (PDOException $exception) {
+        } catch (\PDOException $exception) {
             print "[Could not connect to SQL Server] -> error: {$exception->getMessage()}\n";
             return false;
         }
     }
 
-    function Query($query, $fetchAll = true){
+    public function Query($query, $fetchAll = true)
+    {
         if (!$this->Connect()){
             return false;
         }
@@ -39,13 +40,13 @@ class Database{
             }
 
             if ($fetchAll){
-                $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
             } else {
-                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                $result = $stmt->fetch(\PDO::FETCH_ASSOC);
             }
 
             return $result;
-        } catch (Exception $exception){
+        } catch (\Exception $exception){
             print "[Could not execute query] -> error: {$exception->getMessage()}\n";
             return false;
         }
